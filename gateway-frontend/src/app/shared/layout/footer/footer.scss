@@ -1,0 +1,53 @@
+/*===========================================================================
+ Home Variables
+========================================================================== */
+$color-Primary: rgb(218, 165, 32);
+$color-Secondary: rgb(170, 169, 173);
+$color-tertiary: rgb(0, 0, 0);
+$logo: url(../../../../content/images/Logo.png);
+
+.footerBar {
+    background-color: rgba(170, 169, 173, 0.1);
+    color: goldenrod;
+    text-align: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    border-radius: 10px;
+    a {
+        color: rgba(218, 165, 32, 0.5);
+        &:hover {
+            color: $color-Secondary;
+        }
+    }
+}
+
+.footerLogo {
+    background-image: $logo;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.footerTitle {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    font-family: 'Great Vibes', cursive;
+}
+
+.footerSubtitle {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-top: 0;
+    font-family: 'Trade Winds', cursive;
+}
+
+.footerText {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 0;
+}

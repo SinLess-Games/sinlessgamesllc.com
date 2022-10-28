@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari&display=swap');
+
+/*===========================================================================
+ Home Variables
+========================================================================== */
+$color-Primary: rgb(218, 165, 32);
+$color-Secondary: rgb(170, 169, 173);
+$color-tertiary: rgb(0, 0, 0);
+$logo: url(src/content/images/Logo.png);
+
+/* ==========================================================================
+Main page styles
+========================================================================== */
+
+.Contact {
+    padding: 25px;
+    width: 100%;
+    height: Auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 5px solid $color-Primary;
+    border-radius: 30px;
+}
+
+.ContactTitle {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: $color-Primary;
+    padding: 25px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 100px;
+    text-align: center;
+}
+
+.ContactColumn {
+    width: auto;
+    padding: 15px;
+}
+
+.ContactCard {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+    border: 2.5px solid $color-Primary;
+    color: $color-Primary;
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 25px;
+    border-radius: 30px;
+}
+
+.Icons {
+    color: $color-Primary;
+    font-size: 80px;
+}
+
+.CardTitle {
+    justify-content: center;
+    align-items: center;
+    color: $color-Primary;
+    padding: 25px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    text-align: center;
+}

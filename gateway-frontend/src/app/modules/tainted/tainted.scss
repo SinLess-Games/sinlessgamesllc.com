@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari&display=swap');
+
+/*===========================================================================
+ Home Variables
+========================================================================== */
+$color-Primary: rgb(218, 165, 32);
+$color-Secondary: rgb(170, 169, 173);
+$color-tertiary: rgb(0, 0, 0);
+$logo: url(../../../content/images/Logo.png);
+
+/* ==========================================================================
+Main page styles
+========================================================================== */
+
+.Tainted {
+    width: 100%;
+    height: Auto;
+    background-image: url(../../../content/images/tainted-fog.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 5px solid $color-Primary;
+    border-radius: 30px;
+}
+
+.TaintedTitle {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: $color-Primary;
+    padding: 25px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 100px;
+    text-align: center;
+}
+
+.TaintedContent {
+    padding: 25px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    color: $color-Primary;
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 25px;
+
+    text-shadow: -1px -1px 2px $color-tertiary;
+}
+
+.TaintedSubTitle {
+    color: $color-Primary;
+    font-family: 'Trade Winds', cursive;
+    font-size: 50px;
+    text-align: center;
+
+    text-shadow: 0 0 5px $color-tertiary;
+}
+
+.Call {
+    color: $color-Primary;
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    text-align: center;
+
+    text-shadow: 0 0 5px $color-tertiary;
+}
+
+.Intro {
+    color: $color-Primary;
+    font-family: 'Trade Winds', cursive;
+    font-size: 25px;
+    text-align: center;
+
+    text-shadow: 0 0 5px $color-tertiary;
+}
