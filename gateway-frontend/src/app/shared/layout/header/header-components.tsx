@@ -2,10 +2,9 @@ import React from 'react'
 
 import { NavItem, NavLink, NavbarBrand } from 'reactstrap'
 import { NavLink as Link } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { GiWingedSword, GiCastle } from 'react-icons/gi'
 import { IoIosContact } from 'react-icons/io'
-import { FaMoneyBillWave } from 'react-icons/fa'
+import { FaMoneyBillWave, FaHome } from 'react-icons/fa'
 
 export const BrandIcon = (props) => (
     <div {...props} className="brand-icon">
@@ -17,15 +16,17 @@ export const Brand = () => (
     <NavbarBrand tag={Link} to="/" className="brand-logo">
         <BrandIcon />
         <span className="brand-title">SinLess Games </span>
-        <span className="navbar-version">{VERSION}</span>
+        <a href=" " className="navbar-version">
+            {VERSION}
+        </a>
     </NavbarBrand>
 )
 
 export const Home = () => (
     <NavItem>
         <NavLink tag={Link} to="/" className="d-flex align-items-center">
-            <FontAwesomeIcon icon="home" />
-            <span>Home</span>
+            <FaHome className="navbar-icon" />
+            <span className="navbar-link">Home</span>
         </NavLink>
     </NavItem>
 )
@@ -37,8 +38,8 @@ export const About = () => (
             to="/about-us"
             className="d-flex align-items-center NavBarItem"
         >
-            <GiWingedSword />
-            <span> About</span>
+            <GiWingedSword className="navbar-icon" />
+            <span className="navbar-link"> About</span>
         </NavLink>
     </NavItem>
 )
@@ -50,8 +51,8 @@ export const Tainted = () => (
             to="/tainted-kingdoms"
             className="d-flex align-items-center NavBarItem"
         >
-            <GiCastle />
-            <span>Tainted Kingdoms</span>
+            <GiCastle className="navbar-icon" />
+            <span className="navbar-link">Tainted Kingdoms</span>
         </NavLink>
     </NavItem>
 )
@@ -63,8 +64,8 @@ export const Contact = () => (
             to="/contact-us"
             className="d-flex align-items-center NavBarItem"
         >
-            <IoIosContact />
-            <span> Contact us</span>
+            <IoIosContact className="navbar-icon" />
+            <span className="navbar-link"> Contact us</span>
         </NavLink>
     </NavItem>
 )
@@ -76,8 +77,8 @@ export const Services = () => (
             to="/Services"
             className="d-flex align-items-center NavBarItem"
         >
-            <FaMoneyBillWave />
-            <span>Services</span>
+            <FaMoneyBillWave className="navbar-icon" />
+            <span className="navbar-link">Services</span>
         </NavLink>
     </NavItem>
 )

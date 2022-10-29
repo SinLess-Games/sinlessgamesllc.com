@@ -1,6 +1,6 @@
-$header-color: #fff;
-$header-color-secondary: #bbb;
-$header-color-hover: darken($header-color, 20%);
+$color-Primary: rgb(218, 165, 32);
+$color-Secondary: rgb(170, 169, 173);
+$color-tertiary: rgb(0, 0, 0);
 
 /* ==========================================================================
 Navbar styles
@@ -19,7 +19,7 @@ Navbar styles
 
 .navbar-version {
     font-size: 10px;
-    color: $header-color-secondary;
+    color: $color-Primary;
     padding: 0 0 0 10px;
 }
 
@@ -39,9 +39,9 @@ Navbar styles
 
 .brand-title {
     font-size: 24px;
-    color: $header-color;
+    color: $color-Primary;
     &:hover {
-        color: $header-color-hover;
+        color: $color-Secondary;
         text-decoration: none;
     }
 }
@@ -52,4 +52,19 @@ Navbar styles
     position: absolute;
     top: 0px;
     z-index: 1031;
+}
+
+.navbar-link {
+    font-size: 20px;
+    color: $color-Primary;
+    &:hover {
+        color: $color-Secondary;
+        text-decoration: none;
+    }
+}
+
+.navbar-icon {
+    font-size: 30px;
+    color: $color-Primary;
+    padding-right: 4px;
 }
