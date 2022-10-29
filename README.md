@@ -1,1 +1,1 @@
-# SinLEss Games Website Domain Structure
+# SinLess Games Website Domain Structure
