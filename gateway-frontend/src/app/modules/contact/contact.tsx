@@ -13,11 +13,14 @@ export const Contact = () => {
             <Row>
                 <h1 className="ContactTitle">Contact Us</h1>
                 <p className="ServicesText">
-                    Welcome to the Community! We are glad you are here. You can get a hold of us via the ways below.
-                    We are always looking for new people to join our team. If you are interested in joining us, please contact us via Discord or Email.
-                    If you are interested in joining our Discord, please click join us.
-                    Follow our code  on github to see what we are working on.
-                    Our phone number is for you to call if you are interested in our services.
+                    Welcome to the Community! We are glad you are here. You can
+                    get a hold of us via the ways below. We are always looking
+                    for new people to join our team. If you are interested in
+                    joining us, please contact us via Discord or Email. If you
+                    are interested in joining our Discord, please click join us.
+                    Follow our code on github to see what we are working on. Our
+                    phone number is for you to call if you are interested in our
+                    services.
                 </p>
             </Row>
             <Row>
@@ -31,9 +34,10 @@ export const Contact = () => {
                             <Card.Body>
                                 <Card.Text>
                                     We love to hear from our Fans and Are always
-                                    looking to help. We will try to respond to all
-                                    emails within 24 hours. Please be patient with
-                                    us wait time may vary You can contact us by{' '}
+                                    looking to help. We will try to respond to
+                                    all emails within 24 hours. Please be
+                                    patient with us wait time may vary You can
+                                    contact us by{' '}
                                     <a href="mailto:support@sinlessgamesllc.com">
                                         Email
                                     </a>
@@ -44,7 +48,7 @@ export const Contact = () => {
                     </Row>
                 </Col>
                 <Col className="ContactColumn">
-                    <Row className='Row'>
+                    <Row className="Row">
                         <Card className="ContactCard">
                             <br />
                             <FaPhone className="Icons" />
@@ -52,12 +56,15 @@ export const Contact = () => {
                             <Card.Title className="CardTitle">Phone</Card.Title>
                             <Card.Body>
                                 <Card.Text>
-                                    We are here for you, we want to talk, and would
-                                    love to offer many services for you. you can see
-                                    our
-                                    <Link to="/Services"> Services</Link> page for
-                                    more information. or call us at:
-                                    <a href="tel:1-844-799-0078"> 1-844-799-0078</a>
+                                    We are here for you, we want to talk, and
+                                    would love to offer many services for you.
+                                    you can see our
+                                    <Link to="/Services"> Services</Link> page
+                                    for more information. or call us at:
+                                    <a href="tel:1-844-799-0078">
+                                        {' '}
+                                        1-844-799-0078
+                                    </a>
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -74,12 +81,12 @@ export const Contact = () => {
                             </Card.Title>
                             <Card.Body>
                                 <Card.Text>
-                                    We Have A wonderful community on discord. We are
-                                    always looking for new members to join us. We
-                                    have a great community of people that are always
-                                    willing to help. We also have a great group of
-                                    people that are always willing to play games
-                                    with you.
+                                    We Have A wonderful community on discord. We
+                                    are always looking for new members to join
+                                    us. We have a great community of people that
+                                    are always willing to help. We also have a
+                                    great group of people that are always
+                                    willing to play games with you.
                                     <br />
                                     <a href="https://discord.gg/qQQpRdZqx8">
                                         Join Us
@@ -95,14 +102,17 @@ export const Contact = () => {
                             <br />
                             <FaGithub className="Icons" />
                             <br />
-                            <Card.Title className="CardTitle">Github</Card.Title>
+                            <Card.Title className="CardTitle">
+                                Github
+                            </Card.Title>
                             <Card.Body>
                                 <Card.Text>
-                                    We have repositories on github for all of our
-                                    projects. We are always looking for new people
-                                    to help us out, or just follow the development
-                                    process of our projects. all projects are
-                                    subject to copyright and licensing.
+                                    We have repositories on github for all of
+                                    our projects. We are always looking for new
+                                    people to help us out, or just follow the
+                                    development process of our projects. all
+                                    projects are subject to copyright and
+                                    licensing.
                                     <br />
                                     <a href="https://github.com/SinLess-Games">
                                         SinLess-Games Github

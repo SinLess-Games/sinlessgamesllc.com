@@ -27,8 +27,9 @@ export const App = () => {
                         <br />
                         <AppRoutes />
                     </Card>
-                    <Footer />
                 </div>
+
+                <Footer />
             </div>
         </BrowserRouter>
     )

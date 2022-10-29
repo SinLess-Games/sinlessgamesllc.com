@@ -30,9 +30,9 @@ export const Home = () => {
                             <p className="pad Intro">
                                 SinLess Games is a small game development studio
                                 based in Montana. Here at SinLess Games we
-                                strive to create highly immersive games
-                                that will make you never want to put them down.
-                                Our philosophy and motto is &quot;A world where
+                                strive to create highly immersive games that
+                                will make you never want to put them down. Our
+                                philosophy and motto is &quot;A world where
                                 immersion ranks Supreme&quot;. We strive to
                                 follow this motto in every game we make for you;
                                 our friends, family, fans, and Community. All of
@@ -52,7 +52,7 @@ export const Home = () => {
                                 date as of yet. We are looking for talented
                                 individuals to aid in the development of the
                                 game. If you are interested in joining the team,
-                                please contact us at {' '}
+                                please contact us at{' '}
                                 <a href="mailto:support@sinlessgamesllc.com">
                                     {' '}
                                     Support.
