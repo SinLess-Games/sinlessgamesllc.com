@@ -1,11 +1,8 @@
 # SinLess Games Website Frontend
 
----
 This is the readme for the sinless games website frontend
 
 ## Technologies Used
-
----
 
 * [React](https://reactjs.org/)
 * [react-redux](https://react-redux.js.org/)
