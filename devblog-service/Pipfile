@@ -8,7 +8,7 @@ flask = "*"
 flask-migrate = "*"
 flask-restx = "*"
 flask-sqlalchemy = "*"
-werkzeug = "==2.1.2"
+werkzeug = "==2.2.2"
 python-decouple = "==3.6"
 
 [dev-packages]
