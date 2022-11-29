@@ -58,7 +58,7 @@
     "@types/lodash": "^4.14.186",
     "@types/mocha": "^10.0.0",
     "@types/node": "^18.11.7",
-    "@types/react": "^17.0.2",
+    "@types/react": "^18.0.0",
     "@types/react-bootstrap": "0.32.31",
     "@types/react-dom": "^18.0.8",
     "@types/react-icons": "3.0.0",
