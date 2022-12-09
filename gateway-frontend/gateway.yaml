@@ -10,8 +10,8 @@ services:
     image: nginx:latest
     volumes:
       - ./conf.d:/etc/nginx/conf.d
-      - ./public.pem:/etc/ssl/cert.pem
-      - ./private.pem:/etc/ssl/priv.key
+      - public.pem:/etc/ssl/cert.pem
+      - private.pem:/etc/ssl/priv.key
     depends_on:
       - gateway
     ports:
