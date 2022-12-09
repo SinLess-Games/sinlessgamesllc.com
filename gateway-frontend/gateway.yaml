@@ -2,6 +2,9 @@ version: '3.8'
 services:
   gateway:
     image: sinless777/gateway:latest
+    deploy:
+      mode: replicated
+      replicas: 4
 
   nginx:
     image: nginx:latest
