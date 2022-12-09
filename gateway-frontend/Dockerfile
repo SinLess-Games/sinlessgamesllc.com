@@ -22,6 +22,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY public.pem /etc/ssl/cert.pem
 COPY priv.key /etc/ssl/priv.key
 # Expose port
-EXPOSE 80
+EXPOSE 9080
+EXPOSE 7443
 # Start nginx
 CMD ["nginx", "-g", "daemon off;"]

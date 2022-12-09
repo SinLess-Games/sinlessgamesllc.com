@@ -24,12 +24,14 @@ class DevBlogPost(db.Model):
     image = db.Column(db.BLOB, nullable=True)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow)
-    created_by = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    created_by = db.Column(db.String(100), nullable=False)
 
     def __repr__(self):
         return f"devPost('{self.title}', '{self.description}', '{self.link}', '{self.created_at}', '{self.updated_at}', '{self.created_by}')"
 
     def save(self):
+        self.created_at = datetime.utcnow()
+        self.updated_at = datetime.utcnow()
         db.session.add(self)
         db.session.commit()
 

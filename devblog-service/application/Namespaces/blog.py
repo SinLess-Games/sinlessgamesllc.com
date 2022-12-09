@@ -4,15 +4,15 @@ from flask import request
 
 blog_ns = Namespace('blog', description='Blog related operations', path='/api/v1/dev-blog')
 
-blog_model = blog_ns.model('DevBlogPost', {
-    'id': fields.Integer(readOnly=True, description='The blog unique identifier'),
-    'title': fields.String(required=True, description='The blog title'),
-    'description': fields.String(required=True, description='The blog description'),
-    'image': fields.String(required=True, description='The blog image'),
-    'created_at': fields.DateTime(required=True, description='The blog creation date'),
-    'updated_at': fields.DateTime(required=True, description='The blog update date'),
-    'created_by': fields.Integer(required=True, description='The blog creator id')
-})
+blog_model = blog_ns.model(
+    'DevBlogPost',
+    {
+        'title': fields.String(required=True, description='The blog title'),
+        'description': fields.String(required=True, description='The blog description'),
+        'image': fields.String(required=False, description='The blog image'),
+        'created_by': fields.Integer(required=True, description='The blog creator id')
+    }
+)
 
 
 @blog_ns.route('/api/v1/dev-blog')
@@ -35,16 +35,14 @@ class DevBlogPost(Resource):
         :return:
         """
         data = request.get_json()
-        post = DevBlogPost(
+        new_devblogpost = DevBlogPost(
             title=data['title'],
             description=data['description'],
             image=data['image'],
-            created_at=datetime.utcnow(),
-            updated_at=datetime.utcnow(),
             created_by=data['created_by']
         )
 
-        post.save()
+        new_devblogpost.save()
 
         return {'message': 'Blog post created successfully'}, 201
 

@@ -2,7 +2,7 @@ from flask import Flask
 from flask_restx import Api
 from flask_migrate import Migrate
 from models.exts import db
-from models.models import DevBlogPost, DevBlogComment
+from models.models import DevBlogPost
 from config import DevelopmentConfig
 
 app = Flask(__name__)
@@ -29,9 +29,8 @@ def make_shell_context():
     return {
         'db': db,
         'DevBlogPost': DevBlogPost,
-        'DevBlogComment': DevBlogComment
     }
 
 
 if __name__ == '__main__':
-    app.run(debug=DevelopmentConfig.DEBUG, port=DevelopmentConfig.PORT)
+    app.run(debug=DevelopmentConfig.DEBUG, port=DevelopmentConfig.PORT, ssl_context=('Certificates/public.pem', 'Certificates/priv.key'))
