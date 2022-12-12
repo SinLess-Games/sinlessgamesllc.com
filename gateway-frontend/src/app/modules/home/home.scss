@@ -17,7 +17,7 @@ Main page styles
  TAGS
 ############## */
 
-.img {
+.logo {
     height: auto;
     width: 100%;
 }
@@ -40,15 +40,32 @@ Main page styles
     border-radius: 20px;
 }
 
+.row {
+    width: auto;
+
+}
+
+@media (max-width: 500px) {
+    .logo {
+        height: auto;
+    }
+}
+
 @media (max-width: 768px) {
-    .Showcase {
-        background-image: url(../../../content/images/galaxy-1.jpg);
+    .logo {
+        height: auto;
     }
 }
 
 @media (max-width: 1800px) {
     .Showcase {
         background-image: url(../../../content/images/galaxy-alt.png);
+    }
+    .logo {
+        height: 540px;
+        width: 920px;
+        align-content: center;
+        justify-content: center;
     }
 }
 
@@ -57,10 +74,11 @@ Main page styles
     align-items: center;
     width: 100%;
     color: $color-Primary;
-    padding: 25px;
+    padding-top: 25px;
     font-family: 'Great Vibes', cursive;
     font-size: 80px;
     text-align: center;
+    padding-bottom: -5rem;
 }
 
 .CallToAction {

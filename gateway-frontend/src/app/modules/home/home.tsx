@@ -8,18 +8,18 @@ export const Home = () => {
     return (
         <Col>
             <Col md="9" className="pad Showcase">
-                <Row>
+                <Row className="row">
                     <h1 className="Welcome">Welcome to SinLess Games</h1>
-                    <br />
                 </Row>
                 <Row>
-                    <Col className="pad sColumn40">
-                        <img
-                            src="../../../content/images/Logo.png"
-                            alt="SinLess Games Logo"
-                            className="img"
-                        />
-                    </Col>
+                    <img
+                        src="../../../content/images/Logo.png"
+                        alt="SinLess Games Logo"
+                        className="logo"
+                    />
+                </Row>
+
+                <Row>
                     <Col className="sColumn60">
                         <Row>
                             <h2 className="CallToAction">

@@ -1,0 +1,9 @@
+Changes made by Timothy Pierce on December 11, 2022
+
+Started work on the helix bot service
+
+Using language Node.js
+
+Set up webpack, prettier, babel, eslint
+
+	
