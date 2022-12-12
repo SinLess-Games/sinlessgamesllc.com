@@ -2,5 +2,5 @@ Flask
 Flask-Migrate
 flask-restx
 Flask-SQLAlchemy
-Werkzeug==2.1.2
+Werkzeug==2.2.2
 python-decouple==3.6
