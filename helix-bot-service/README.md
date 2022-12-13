@@ -18,7 +18,7 @@ to provide the most intuitive and responsive experience for our users.
 ---
 The usage of this bot's code is limited to the SinLess Games LLC Official discord server. If you wish 
 to use this code for your own server, you must contact the owner of this repository at 
-[SinLess Games Support](support@sinlessgamesllc.com) to request permission.
+support@sinlessgamesllc.com to request permission.
 
 It is generally assumed that you will allowed to add this bot to your server free of charge, However 
 use of the code within this repo is not allowed, if you wish to use the bot you may add it to your server.
@@ -96,6 +96,9 @@ You will need to have the following installed on your machine:
 
 ## Built With:
 
+We used the following template for the base of our bot:
+- [RileCraft/DiscordBot-Template](https://github.com/RileCraft/DiscordBot-Template)
+
 ---
 
 ### Main Dependencies
@@ -139,6 +142,6 @@ TBA
 ### Contact
 
 - [SinLess Games LLC](https://sinlessgamesllc.com) - The Company website
-- [SinLess Games Support](support@sinlessgamesllc.com) - The Company support email
+- support@sinlessgamesllc.com - The Company support email
 
 

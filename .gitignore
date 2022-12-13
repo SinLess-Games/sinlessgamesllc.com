@@ -440,3 +440,5 @@ sketch
 helix-bot-service/src/Config/config.json
 
 helix-bot-service/src/Config/settings.json
+
+helix-bot-service/src/Bot/Src/Credentials/Config.js
