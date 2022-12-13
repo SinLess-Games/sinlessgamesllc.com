@@ -1,0 +1,33 @@
+CHANGELOG December 12, 2022
+Changes made by Timothy Pierce
+
+Worked on createing file structure
+
+	- src
+	   - Bot
+	      - Commands
+	      - Events
+	      - Handlers
+	      - SlashCommands
+	      - Systems
+	      - index.js
+	  - Config
+	      - config.json
+	      - settings.json
+	  - Dashboard
+	      - Public
+	      - src
+	          - pages
+	          - views
+	          - layout
+	  - Express
+	      - index.js
+	      
+	     
+	     
+Set up configuration files
+started to build discord.js client
+started to build express app
+started to build react app
+Added bot invite link to Readme.md in helix bot service.
+

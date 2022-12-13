@@ -436,3 +436,7 @@ sketch
 .idea/
 
 *.conf
+
+helix-bot-service/src/Config/config.json
+
+helix-bot-service/src/Config/settings.json
