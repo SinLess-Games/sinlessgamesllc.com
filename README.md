@@ -4,14 +4,13 @@ Each folder with the exception of the changelogs is it's own individual project,
 
 ## ~~~ ⚠️ WARNING ⚠️ ~~~
 
----
 The usage of this code is limited to SinLess Games LLC . If you wish 
 to use this code, you must contact the owner of this repository at 
-[SinLess Games Support](support@sinlessgamesllc.com) to request permission.
+[SinLess Games Support](mail:support@sinlessgamesllc.com) to request permission.
  
 Use of the code within this repo is not allowed, if you wish to use the bot you may add it to your server.
 
-
+---
 
 ## Our discord Bot Helix
 
