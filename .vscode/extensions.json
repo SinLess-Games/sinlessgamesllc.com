@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "nrwl.angular-console",
+    "esbenp.prettier-vscode",
+    "firsttris.vscode-jest-runner",
+    "DavidAnson.vscode-markdownlint",
+    "github.vscode-github-actions",
+    "christian-kohler.npm-intellisense",
+    "infeng.vscode-react-typescript",
+    "jawandarajbir.react-vscode-extension-pack"
+  ]
+}

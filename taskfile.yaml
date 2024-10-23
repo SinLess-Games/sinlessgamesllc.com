@@ -1,0 +1,33 @@
+---
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+version: "3"
+
+# vars:
+# env:
+# includes:
+
+tasks:
+  default: task -l
+
+  init:
+    desc: Initialize The Project
+    cmds:
+      - cmd: echo Initializing the project
+      - cmd: pnpm config set global-bin-dir=/workspaces/sinlessgamesllc.com/.pnpm-store
+      - cmd: export PATH="/workspaces/sinlessgamesllc.com/.pnpm-store:$PATH"
+      - cmd: npm install
+        silent: true
+      - cmd: npm install -g npm@10.5.0
+        silent: true
+      - cmd: pnpm add -g pnpm
+        silent: true
+      - cmd: npm add --global nx@latest
+        silent: true
+
+  check-port:
+    desc: "Check if port 3000 is in use and kill the process if it is"
+    silent: true
+    cmds:
+      - echo Checking port 3000 and killing process if it is in use
+      - lsof -i :3000 | grep LISTEN | awk '{print $2}' | xargs kill -9
+      - echo Task Complete

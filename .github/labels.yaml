@@ -1,0 +1,55 @@
+---
+# Branches
+- name: "branch: develop"
+  color: "800000"
+- name: "branch: feature"
+  color: "800000"
+- name: "branch: bugfix"
+  color: "800000"
+- name: "branch: hotfix"
+  color: "800000"
+- name: "branch: release"
+  color: "800000"
+- name: "branch: fix"
+  color: "800000"
+- name: "branch: main"
+  color: "800000"
+
+# Semantic Type
+- name: "type: patch"
+  color: "0052CC"
+- name: "type: minor"
+  color: "0052CC"
+- name: "type: major"
+  color: "0052CC"
+- name: "type: break"
+  color: "0052CC"
+- name: "type: todo"
+  color: "0052CC"
+
+# Area
+- name: area/docs
+  color: "0e8a16"
+- name: area/apps
+  color: "0e8a16"
+- name: area/web-ui
+  color: "0e8a16"
+- name: area/libs
+  color: "0e8a16"
+- name: area/taskfile
+  color: "0e8a16"
+- name: area/packageJSON
+  color: "0e8a16"
+
+# Misc
+- name: "todo comment"
+  color: "0E8A16"
+
+# Labels
+- name: "feature"
+  color: "0052CC"
+- name: "release"
+  color: "0052CC"
+- name: "Documentation"
+  description: "Changes that affect the documentation, e.g. Improvements or additions."
+  color: "0052CC"

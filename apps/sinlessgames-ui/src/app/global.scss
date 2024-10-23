@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Italianno&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(218, 165, 32, 0);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(218, 165, 32, 0.8);
+}

@@ -1,0 +1,50 @@
+---
+#
+# Area of the Repo
+#
+area/docs:
+  - changed-files:
+      - any-glob-to-any-file: Docs/**
+  - base-branch: main
+
+area/apps:
+  - changed-files:
+      - any-glob-to-any-file: apps/**
+  - base-branch: main
+
+area/web-ui:
+  - changed-files:
+      - any-glob-to-any-file: apps/sinlessgames-ui/**
+      - any-glob-to-any-file: apps/sinlessgames-ui-e2e/**
+  - base-branch: main
+
+area/libs:
+  - changed-files:
+      - any-glob-to-any-file: libs/**
+  - base-branch: main
+
+area/taskfile:
+  - changed-files:
+      - any-glob-to-any-file: .taskfiles/**
+      - any-glob-to-any-file: Taskfile.yaml
+  - base-branch: main
+
+area/packageJSON:
+  - changed-files:
+      - any-glob-to-any-file: "**/package.json"
+      - any-glob-to-any-file: package.json
+  - base-branch: main
+
+# Add 'feature' label to any PR where the head branch name starts with `feature` or has a `feature` section in the name
+feature:
+  - head-branch: ["^feature", "feature"]
+
+# Add 'release' label to any PR that is opened against the `main` branch
+release:
+  - base-branch: "main"
+
+Documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - Docs/*
+          - Docs/Guides/*

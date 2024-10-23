@@ -1,0 +1,131 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 'refs/heads/main' # Replace 'main' with your default branch name
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
+          
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        env:
+          HUSKY: 0
+        run: |
+          pnpm install
+
+      - name: Build the app
+        run: |
+          pnpx nx build sinlessgames-ui --output-path=dist/apps/sinlessgames-ui
+
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
+
+      - name: Determine previous version
+        id: determine-previous-version
+        run: |
+          PREVIOUS_VERSION=$(curl -s "https://registry.hub.docker.com/v2/repositories/sinless777/sinlessgames-ui/tags" | jq -r '.results[].name' | grep -v 'latest' | sort -V | tail -n 1)
+          echo "Previous version: $PREVIOUS_VERSION"
+          echo "PREVIOUS_VERSION=$PREVIOUS_VERSION" >> $GITHUB_ENV
+
+      - name: Determine new version
+        id: determine-new-version
+        run: |
+          # Extract version from package.json
+          PACKAGE_VERSION=$(jq -r '.version' package.json)
+          echo "Package version: $PACKAGE_VERSION"
+
+          # Check if the previous version matches xx.xx.xx format
+          if [[ "${{ env.PREVIOUS_VERSION }}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Previous version format is correct"
+          else
+            echo "Previous version format is incorrect"
+            exit 1
+          fi
+  
+          # Split the previous version into major, minor, and patch
+          IFS='.' read -r MAJOR MINOR PATCH <<<"${{ env.PREVIOUS_VERSION }}"
+          echo "Previous version components: Major=$MAJOR, Minor=$MINOR, Patch=$PATCH"
+
+          # Create the new version
+          NEW_VERSION="$MAJOR.$MINOR.$((PATCH + 1))"
+          echo "New version: $NEW_VERSION"
+          echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+
+          # Compare the previous version with the version from package.json
+          VERSIONS_MATCH=false
+          if [ "$PACKAGE_VERSION" == "${{ env.NEW_VERSION }}" ]; then
+            echo "Versions match"
+          else
+            echo "Versions do not match, reconciling versions"
+      
+            # Replace version in package.json with the new version
+            jq --arg new_version "$NEW_VERSION" '.version = $new_version' package.json > tmp_package.json && mv tmp_package.json package.json
+
+            # Read the new version from the updated package.json and echo it
+            NEW_PACKAGE_VERSION=$(jq -r '.version' package.json)
+            echo "New package version: $NEW_PACKAGE_VERSION"
+          
+            echo "Version reconciled successfully"
+
+            git config --global user.email "disdainful777@gmail.com"
+            git config --global user.name "Sinless777"
+            git pull origin
+            git add package.json
+            git commit -m "Update package.json version to $NEW_VERSION"
+            git push origin
+          fi
+        
+      - name: Build the Docker image
+        run: |
+          docker build . --file apps/sinlessgames-ui/Dockerfile --tag sinless777/sinlessgames-ui:${{ env.NEW_VERSION }}
+
+      - name: Test the Docker image
+        run: |
+          docker run -d --name test-container sinless777/sinlessgames-ui:${{ env.NEW_VERSION }}
+          sleep 10
+          docker ps | grep test-container
+
+      - name: Push the Docker image
+        run: |
+          docker tag sinless777/sinlessgames-ui:${{ env.NEW_VERSION }} sinless777/sinlessgames-ui:latest
+          docker push sinless777/sinlessgames-ui:${{ env.NEW_VERSION }}
+          docker push sinless777/sinlessgames-ui:latest
+
+      - name: Clean up test container
+        run: |
+          docker stop test-container
+          docker rm test-container
+
+        
