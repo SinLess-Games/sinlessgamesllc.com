@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -13,18 +13,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: 'refs/heads/main' # Replace 'main' with your default branch name
+          ref: "refs/heads/main" # Replace 'main' with your default branch name
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9
           run_install: false
-          
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: "22"
 
       - name: Get pnpm store directory
         shell: bash
@@ -73,7 +73,7 @@ jobs:
             echo "Previous version format is incorrect"
             exit 1
           fi
-  
+
           # Split the previous version into major, minor, and patch
           IFS='.' read -r MAJOR MINOR PATCH <<<"${{ env.PREVIOUS_VERSION }}"
           echo "Previous version components: Major=$MAJOR, Minor=$MINOR, Patch=$PATCH"
@@ -89,14 +89,14 @@ jobs:
             echo "Versions match"
           else
             echo "Versions do not match, reconciling versions"
-      
+
             # Replace version in package.json with the new version
             jq --arg new_version "$NEW_VERSION" '.version = $new_version' package.json > tmp_package.json && mv tmp_package.json package.json
 
             # Read the new version from the updated package.json and echo it
             NEW_PACKAGE_VERSION=$(jq -r '.version' package.json)
             echo "New package version: $NEW_PACKAGE_VERSION"
-          
+
             echo "Version reconciled successfully"
 
             git config --global user.email "disdainful777@gmail.com"
@@ -106,7 +106,7 @@ jobs:
             git commit -m "Update package.json version to $NEW_VERSION"
             git push origin
           fi
-        
+
       - name: Build the Docker image
         run: |
           docker build . --file apps/sinlessgames-ui/Dockerfile --tag sinless777/sinlessgames-ui:${{ env.NEW_VERSION }}
@@ -127,5 +127,3 @@ jobs:
         run: |
           docker stop test-container
           docker rm test-container
-
-        
