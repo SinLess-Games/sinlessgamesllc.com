@@ -22,7 +22,7 @@ export type NavPageType = {
 
 export interface AppBarProps {
   pages: NavPageType[]
-  logo: StaticImageData
+  logo: string | StaticImageData
 }
 
 export const ResponsiveAppBar: React.FC<AppBarProps> = ({ pages, logo }) => {
