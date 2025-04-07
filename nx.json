@@ -15,32 +15,19 @@
         "{workspaceRoot}/eslint.config.js"
       ]
     },
-    "e2e": {
-      "cache": true,
-      "inputs": ["default", "^production"]
-    },
+    "e2e": { "cache": true, "inputs": ["default", "^production"] },
     "@nx/jest:jest": {
       "cache": true,
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
-      "options": {
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
-      }
+      "options": { "passWithNoTests": true },
+      "configurations": { "ci": { "ci": true, "codeCoverage": true } }
     },
     "@nx/esbuild:esbuild": {
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },
-    "@nx/vite:test": {
-      "cache": true,
-      "inputs": ["default", "^production"]
-    }
+    "@nx/vite:test": { "cache": true, "inputs": ["default", "^production"] }
   },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
@@ -79,30 +66,12 @@
         "openTargetName": "open-cypress"
       }
     },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
-    {
-      "plugin": "@nx/jest/plugin",
-      "options": {
-        "targetName": "test"
-      }
-    }
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
+    { "plugin": "@nx/jest/plugin", "options": { "targetName": "test" } }
   ],
   "generators": {
-    "@nx/next": {
-      "application": {
-        "style": "scss",
-        "linter": "eslint"
-      }
-    },
-    "@nx/react": {
-      "library": {
-        "unitTestRunner": "jest"
-      }
-    }
-  }
+    "@nx/next": { "application": { "style": "scss", "linter": "eslint" } },
+    "@nx/react": { "library": { "unitTestRunner": "jest" } }
+  },
+  "nxCloudId": "67f3e2b064b88f0d606afa5b"
 }
