@@ -28,4 +28,4 @@ bucket_name = "sinless-games"
 
 [[r2_buckets]]
 binding = "SINNERVERSE_BUCKET"
-bucket_name = "sinnervese"
+bucket_name = "sinnerverse"
