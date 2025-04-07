@@ -50,3 +50,6 @@ out
 .nx/
 .nx/workspace-data/d/daemon.log
 .nx/workspace-data/file-map.json
+
+vite.config.*.timestamp*
+vitest.config.*.timestamp*

@@ -13,16 +13,22 @@ tasks:
     desc: Initialize The Project
     cmds:
       - cmd: echo Initializing the project
-      - cmd: pnpm config set global-bin-dir=/workspaces/sinlessgamesllc.com/.pnpm-store
-      - cmd: export PATH="/workspaces/sinlessgamesllc.com/.pnpm-store:$PATH"
-      - cmd: npm install
         silent: true
-      - cmd: npm install -g npm@10.5.0
+      - cmd: echo "Installing dependencies..."
         silent: true
-      - cmd: pnpm add -g pnpm
+      - cmd: npm install --global npm@11.2.0 >> /dev/null
         silent: true
-      - cmd: npm add --global nx@latest
+      - cmd: npm add --global nx@latest >> /dev/null
         silent: true
+      - cmd: npm install --global pnpm@latest >> /dev/null
+        silent: true
+      - cmd: pnpm install >> /dev/null
+        silent: true
+      - cmd: echo "Installing dependencies complete"
+        silent: true
+      - cmd: sleep 5
+        silent: true
+      #- cmd: clear
 
   check-port:
     desc: "Check if port 3000 is in use and kill the process if it is"

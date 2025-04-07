@@ -1,0 +1,13 @@
+packages:
+  - apps/*
+  - libs/*
+
+onlyBuiltDependencies:
+  - "@parcel/watcher"
+  - "@swc/core"
+  - core-js-pure
+  - cypress
+  - esbuild
+  - nx
+  - sharp
+  - workerd
