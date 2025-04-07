@@ -1,0 +1,31 @@
+name = "cdn"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+main = "src/index.ts"
+routes = [
+    { pattern = "cdn.sinlessgamesllc.com", custom_domain = true }
+]
+
+
+# Enable Observability
+# This is a flag to enable observability for the worker.
+[observability]
+enabled = true
+head_sampling_rate = 1 # optional. default = 1
+
+
+# R2 Buckets
+# This is a list of R2 buckets that will be bound to the CDN worker.
+# Each bucket will be available in the worker as an environment variable
+# with the name of the binding.
+[[r2_buckets]]
+binding = "HELIX_AI_BUCKET"
+bucket_name = "helix-ai"
+
+[[r2_buckets]]
+binding = "SINLESS_GAMES_BUCKET"
+bucket_name = "sinless-games"
+
+[[r2_buckets]]
+binding = "SINNERVERSE_BUCKET"
+bucket_name = "sinnervese"

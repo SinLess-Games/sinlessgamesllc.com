@@ -1,0 +1,25 @@
+{
+  "name": "cdn",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/cdn/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@naxodev/nx-cloudflare:serve",
+      "options": {
+        "port": 8787
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../coverage/apps/cdn"
+      }
+    },
+    "deploy": {
+      "executor": "@naxodev/nx-cloudflare:deploy"
+    }
+  }
+}
