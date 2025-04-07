@@ -1,0 +1,9 @@
+{
+  "markdownlint.config": {
+    "MD013": {
+      "line_length": 500
+    },
+    "MD033": false,
+    "MD041": false
+  }
+}
