@@ -14,7 +14,8 @@ const IntroCard = {
     also runs a Minecraft server called Mobius Infernium, offering a
     unique and immersive gameplay experience. Join them on a journey where
     game immersion ranks supreme and dreams come true!!!`,
-  image: "/images/3.png"
+  image:
+    "https://cdn.sinlessgamesllc.com/Sinless-Games/images/logos/sinless-games/logo_no_background.webp"
 }
 
 export default function Index() {
@@ -22,6 +23,7 @@ export default function Index() {
     <Grid
       container
       sx={{
+        backgroundColor: "transparent",
         padding: 3,
         display: "flex",
         flexDirection: "column"
@@ -33,21 +35,13 @@ export default function Index() {
           paddingBottom: "1rem"
         }}
       >
-        <br/>
-        <br/>
+        <br />
+        <br />
         <HomeCard
           title={IntroCard.title}
           description={IntroCard.description}
           image={IntroCard.image}
         />
-      </Grid>
-      <Grid
-        item
-        sx={{
-          padding: ".5rem"
-        }}
-      >
-        <ColoredLine color="#DAA520" />
       </Grid>
     </Grid>
   )

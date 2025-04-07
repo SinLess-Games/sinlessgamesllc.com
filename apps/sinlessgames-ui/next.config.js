@@ -14,6 +14,15 @@ const nextConfig = {
   },
   compiler: {
     styledComponents: true
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sinlessgamesllc.com",
+        pathname: "/Sinless-Games/images/**"
+      }
+    ]
   }
 }
 

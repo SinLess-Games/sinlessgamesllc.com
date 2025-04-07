@@ -6,7 +6,6 @@ import StyledComponentsRegistry from "./lib/registry"
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter"
 import { ResponsiveAppBar } from "@sinlessgamesllc/react-components"
 import { pages } from "../variables/MainNavbar/pages"
-import Logo from "../../public/images/3.png"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sinlessgamesllc.com/"),
@@ -24,13 +23,19 @@ export const metadata: Metadata = {
 }
 
 const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  // Use CDN URL for the logo
+  const logoUrl =
+    "https://cdn.sinlessgamesllc.com/Sinless-Games/images/logos/sinless-games/logo_no_background.webp"
+  const backgroundUrl =
+    "https://cdn.sinlessgamesllc.com/Sinless-Games/images/galaxy_planets.webp"
+
   return (
     <html lang="en">
       <body>
         <AppRouterCacheProvider>
           <StyledComponentsRegistry>
-            <Background $image="https://img.freepik.com/free-photo/glowing-sky-sphere-orbits-starry-galaxy-generated-by-ai_188544-15599.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1708128000&semt=ais" />
-            <ResponsiveAppBar pages={pages} logo={Logo} />
+            <Background $image={backgroundUrl} />
+            <ResponsiveAppBar pages={pages} logo={logoUrl} />
             <br />
             {children}
           </StyledComponentsRegistry>
