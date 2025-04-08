@@ -59,7 +59,7 @@
     ],
     "sharedGlobals": []
   },
-  "neverConnectToCloud": true,
+  "neverConnectToCloud": false,
   "plugins": [
     {
       "plugin": "@nx/next/plugin",
