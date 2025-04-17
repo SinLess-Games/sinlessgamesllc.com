@@ -1,158 +1,150 @@
-import { Box, Typography, Grid } from "@mui/material"
-import Card from "../../components/reusable-components/card"
+import { Box, Typography, Grid } from "@mui/material";
+import Card from "../../components/reusable-components/card";
 import {
   EmailCard,
   DiscordCard,
-  GithubCard
-} from "../../variables/Contact/cards"
+  GithubCard,
+} from "../../variables/Contact/cards";
+
+// Define a type for your contact cards
+interface IContactCard {
+  title: string;
+  description: string;
+  link: string;
+  buttonText: string;
+}
 
 export default function Contact() {
+  // Cast your imported cards to the new interface
+  const contactCards: IContactCard[] = [
+    EmailCard,
+    DiscordCard,
+    GithubCard,
+  ];
+
   return (
     <Box
       sx={{
-        padding: 4,
+        p: 4,
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
         alignItems: "center",
-        borderRadius: 20,
-        backgroundColor: "rgba(0, 0, 0, 0.25)"
+        borderRadius: 2,
+        backgroundColor: "rgba(0, 0, 0, 0.25)",
       }}
     >
       <Typography
         variant="h2"
         sx={{
-          jtextAlign: "center",
+          textAlign: "center",
           fontFamily: '"Italianno", cursive',
           fontWeight: 500,
           fontSize: "8rem",
           backgroundColor: "rgba(0, 0, 0, 0.3)",
           border: "0.05rem solid #daa520",
           borderRadius: 50,
-          paddingTop: ".5rem",
-          paddingRight: "1rem",
-          paddingLeft: "1rem",
-          color: "#daa520"
+          py: 0.5,
+          px: 1,
+          color: "#daa520",
         }}
       >
         Contact Us
       </Typography>
-      <br />
+
+      <Box sx={{ height: 16 }} />
+
       <Box
         sx={{
-          padding: 4,
+          p: 4,
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
           alignItems: "center",
-          borderRadius: 20,
+          borderRadius: 2,
           backgroundColor: "rgba(0, 0, 0, 0.40)",
-          border: "0.05rem solid #daa520"
+          border: "0.05rem solid #daa520",
         }}
       >
         <Typography
+          variant="h3"
+          component="div"
           sx={{
             fontFamily: '"Italianno", cursive',
             fontWeight: 500,
             fontSize: "5rem",
             color: "#daa520",
-            padding: 2
+            p: 2,
+            textAlign: "center",
           }}
         >
-          Welcome to Our Community!
+          <strong>Welcome to Our Community!</strong>
         </Typography>
+
         <Typography
           variant="body1"
+          component="div"
           sx={{
             mt: 1,
             textAlign: "center",
             color: "#daa520",
             fontSize: "1.5rem",
-            fontFamily: '"Mate SC", serif'
+            fontFamily: '"Mate SC", serif',
           }}
         >
-          We&apos;re incredibly excited to welcome you into our community!
-          Whether you&apos;re a gamer, a developer, or simply someone who loves
-          immersive experiences, we&apos;re thrilled to have you here. At
-          SinLess Games, we&apos;re more than just a game development studio;
-          We&apos;re a family of passionate individuals dedicated to creating
-          unforgettable experiences. If you&apos;re interested in joining our
-          team, we&apos;re always on the lookout for talented individuals who
-          share our passion for immersive gaming. Whether you&apos;re a skilled
-          developer, a creative designer, or just someone with a love for
-          gaming, we&apos;d love to hear from you. Reach out to us via Discord
-          or Email to learn more about joining our team.
+          We&apos;re incredibly excited to welcome you into our <strong>SinLess Games family</strong>! Whether you&apos;re a gamer, a developer, or 
+          simply someone who loves immersive experiences, we&apos;re thrilled to have you here. If you&apos;re interested in 
+          <strong>joining our team</strong>, we&apos;re always on the lookout for talented individuals—developers, designers, or passionate gamers. 
+          Reach out via <strong>Discord</strong> or <strong>Email</strong> to learn more.
         </Typography>
+
         <Typography
           variant="body1"
+          component="div"
           sx={{
-            mt: 1,
+            mt: 2,
             textAlign: "center",
             color: "#daa520",
             fontSize: "1.5rem",
-            fontFamily: '"Mate SC", serif'
+            fontFamily: '"Mate SC", serif',
           }}
         >
-          And if you&apos;re just here to enjoy our games and be a part of our
-          community, we&apos;re glad to have you! Follow us on GitHub to stay
-          updated on our latest projects and join us on Discord to chat with
-          fellow gamers and developers. If you have any questions or would like
-          to inquire about our services, please don&apos;t hesitate to give us a
-          call. We&apos;re here to help in any way we can, and we&apos;re always
-          happy to hear from you.
+          And if you&apos;re here to enjoy our games, we&apos;re glad to have you! Follow us on <strong>GitHub</strong> to stay updated on projects, 
+          join us on <strong>Discord</strong> to chat with fellow community members, or give us a call if you have questions—we&apos;re here to help.
         </Typography>
+
         <Typography
+          variant="body1"
+          component="div"
           sx={{
-            mt: 1,
+            mt: 2,
             textAlign: "center",
             color: "#daa520",
             fontSize: "1.5rem",
-            fontFamily: '"Mate SC", serif'
+            fontFamily: '"Mate SC", serif',
           }}
         >
-          Once again, welcome to our community. We&apos;re excited to have you
-          here, and we can&apos;t wait to embark on this journey together!
+          Once again, <strong>welcome</strong>—we can&apos;t wait to embark on this journey together!
         </Typography>
+
         <Grid
           container
           spacing={2}
-          direction="row"
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: 4
-          }}
+          justifyContent="center"
+          alignItems="center"
+          sx={{ mt: 4 }}
         >
-          <Grid item>
-            <Card
-              title={EmailCard.title}
-              description={EmailCard.description}
-              link={EmailCard.link}
-              buttonText={EmailCard.buttonText}
-              sx={{ maxWidth: 300 }}
-            />
-          </Grid>
-          <Grid item>
-            <Card
-              title={DiscordCard.title}
-              description={DiscordCard.description}
-              link={DiscordCard.link}
-              buttonText={DiscordCard.buttonText}
-              sx={{ maxWidth: 300 }}
-            />
-          </Grid>
-          <Grid item>
-            <Card
-              title={GithubCard.title}
-              description={GithubCard.description}
-              link={GithubCard.link}
-              buttonText={GithubCard.buttonText}
-              sx={{ maxWidth: 300 }}
-            />
-          </Grid>
+          {contactCards.map((card) => (
+            <Grid item key={card.title}>
+              <Card
+                title={card.title}
+                description={card.description}
+                link={card.link}
+                buttonText={card.buttonText}
+                sx={{ maxWidth: 300 }}
+              />
+            </Grid>
+          ))}
         </Grid>
       </Box>
     </Box>
-  )
+  );
 }
