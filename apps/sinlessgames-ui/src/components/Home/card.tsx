@@ -36,7 +36,7 @@ export const HomeCard: React.FC<CardProps> = ({
       >
         {title}
       </Typography>
-      <br />
+      <Box sx={{padding: 1}}/>
       <Grid
         container
         spacing={2}
@@ -58,7 +58,7 @@ export const HomeCard: React.FC<CardProps> = ({
               alignItems: "center"
             }}
           >
-            <Image src={image} alt={title} width={400} height={300} />
+            <Image src={image} alt={title} width={600} height={500} />
           </Box>
         </Grid>
         {/** Image 2 Medium */}
