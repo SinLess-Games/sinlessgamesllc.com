@@ -1,8 +1,21 @@
-import { Box, Grid, Typography } from "@mui/material"
-import Card from "../../components/reusable-components/card"
-import ServiceCards from "../../variables/Services/cards"
+import { Box, Grid, Typography } from "@mui/material";
+import Card, {CardProps} from "../../components/reusable-components/card";
+import ServiceCards from "../../variables/Services/cards";
 
 export default function Services() {
+  // Create an array of card objects for easy mapping.
+  const serviceCards: CardProps[] = [
+    ServiceCards.gameDesignCard,
+    ServiceCards.webDesignCard,
+    ServiceCards.customPCsCard,
+    ServiceCards.communityCard,
+    ServiceCards.techResearchCard,
+    ServiceCards.homeNetworkCard,
+    ServiceCards.smartHomeCard,
+    ServiceCards.homeAutomationCard,
+    ServiceCards.homeSecurityCard,
+  ];
+
   return (
     <Box
       sx={{
@@ -12,13 +25,13 @@ export default function Services() {
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 20,
-        backgroundColor: "rgba(0, 0, 0, 0.25)"
+        backgroundColor: "rgba(0, 0, 0, 0.25)",
       }}
     >
       <Typography
         variant="h2"
         sx={{
-          jtextAlign: "center",
+          textAlign: "center", // fixed typo
           fontFamily: '"Italianno", cursive',
           fontWeight: 500,
           fontSize: "8rem",
@@ -28,12 +41,12 @@ export default function Services() {
           paddingTop: ".5rem",
           paddingRight: "1rem",
           paddingLeft: "1rem",
-          color: "#daa520"
+          color: "#daa520",
         }}
       >
         Services
       </Typography>
-      <br />
+      <Box sx={{padding: 2}}/>
       <Box
         sx={{
           padding: 4,
@@ -43,7 +56,7 @@ export default function Services() {
           alignItems: "center",
           borderRadius: 20,
           backgroundColor: "rgba(0, 0, 0, 0.40)",
-          border: "0.05rem solid #daa520"
+          border: "0.05rem solid #daa520",
         }}
       >
         <Typography
@@ -53,19 +66,17 @@ export default function Services() {
             textAlign: "center",
             color: "#daa520",
             fontSize: "1.5rem",
-            fontFamily: '"Mate SC", serif'
+            fontFamily: '"Mate SC", serif',
           }}
+          component="div" // allows HTML tags within the content
         >
-          At SinLess Games, we are dedicated to providing a diverse range of
-          services tailored to the gaming community. We strive to make
-          high-quality gaming experiences accessible to everyone, whether
-          you&apos;re looking for budget-friendly options or top-of-the-line
-          equipment. Our commitment to affordability means that we work hard to
-          keep our services accessible without compromising on quality. Above
-          all, we are here to cater to your needs and ensure that your gaming
-          experience is nothing short of exceptional. Join us, and let the fun
-          begin with your own custom gaming experience.
+          At <strong>SinLess Games</strong>, we are dedicated to providing a diverse range of services tailored to the gaming community. 
+          We strive to make high-quality gaming experiences accessible to everyone, whether you&apos;re looking for budget-friendly options 
+          or top-of-the-line equipment. Our commitment to affordability means that we work hard to keep our services accessible without 
+          compromising on quality. Above all, we are here to cater to your needs and ensure that your gaming experience is <strong>nothing 
+          short of exceptional</strong>. Join us, and let the fun begin with your own custom gaming experience.
         </Typography>
+        
         <Grid
           container
           spacing={2}
@@ -74,75 +85,22 @@ export default function Services() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            padding: 4
+            padding: 4,
           }}
         >
-          <Grid item>
-            <Card
-              title={ServiceCards.gameDesignCard.title}
-              description={ServiceCards.gameDesignCard.description}
-              sx={{ maxWidth: 300 }}
-            />
-          </Grid>
-          <Grid item>
-            <Card
-              title={ServiceCards.webDesignCard.title}
-              description={ServiceCards.webDesignCard.description}
-              sx={{ maxWidth: 300 }}
-            />
-          </Grid>
-          <Grid item>
-            <Card
-              title={ServiceCards.customPCsCard.title}
-              description={ServiceCards.customPCsCard.description}
-              sx={{ maxWidth: 300 }}
-            />
-          </Grid>
-          <Grid item>
-            <Card
-              title={ServiceCards.communityCard.title}
-              quote={ServiceCards.communityCard.quote}
-              description={ServiceCards.communityCard.description}
-              sx={{ maxWidth: 300 }}
-            />
-          </Grid>
-          <Grid item>
-            <Card
-              title={ServiceCards.techResearchCard.title}
-              description={ServiceCards.techResearchCard.description}
-              sx={{ maxWidth: 300 }}
-            />
-          </Grid>
-          <Grid item>
-            <Card
-              title={ServiceCards.homeNetworkCard.title}
-              description={ServiceCards.homeNetworkCard.description}
-              sx={{ maxWidth: 300 }}
-            />
-          </Grid>
-          <Grid item>
-            <Card
-              title={ServiceCards.smartHomeCard.title}
-              description={ServiceCards.smartHomeCard.description}
-              sx={{ maxWidth: 300 }}
-            />
-          </Grid>
-          <Grid item>
-            <Card
-              title={ServiceCards.homeAutomationCard.title}
-              description={ServiceCards.homeAutomationCard.description}
-              sx={{ maxWidth: 300 }}
-            />
-          </Grid>
-          <Grid item>
-            <Card
-              title={ServiceCards.homeSecurityCard.title}
-              description={ServiceCards.homeSecurityCard.description}
-              sx={{ maxWidth: 300 }}
-            />
-          </Grid>
+          {serviceCards.map((card, index) => (
+            <Grid item key={index}>
+              <Card
+                title={card.title}
+                description={card.description}
+                // if the card includes a quote, pass it along.
+                {...(card.quote && { quote: card.quote })}
+                sx={{ maxWidth: 300, maxHeight: 600, margin: 2 }}
+              />
+            </Grid>
+          ))}
         </Grid>
       </Box>
     </Box>
-  )
+  );
 }
