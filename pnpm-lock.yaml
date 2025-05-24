@@ -113,7 +113,7 @@ importers:
         version: 20.7.1(@babel/traverse@7.27.0)(@swc-node/register@1.10.10(@swc/core@1.6.13(@swc/helpers@0.5.15))(@swc/types@0.1.21)(typescript@5.7.3))(@swc/core@1.6.13(@swc/helpers@0.5.15))(@types/node@20.14.10)(@zkochan/js-yaml@0.0.7)(babel-plugin-macros@3.1.0)(eslint@9.24.0(jiti@2.4.2))(nx@20.7.1(@swc-node/register@1.10.10(@swc/core@1.6.13(@swc/helpers@0.5.15))(@swc/types@0.1.21)(typescript@5.7.3))(@swc/core@1.6.13(@swc/helpers@0.5.15)))(ts-node@10.9.2(@swc/core@1.6.13(@swc/helpers@0.5.15))(@types/node@20.14.10)(typescript@5.7.3))(typescript@5.7.3)
       '@nx/nx-win32-x64-msvc':
         specifier: ^20.7.1
-        version: 20.7.1
+        version: 20.8.2
       '@nx/react':
         specifier: 20.7.1
         version: 20.7.1(@babel/traverse@7.27.0)(@swc-node/register@1.10.10(@swc/core@1.6.13(@swc/helpers@0.5.15))(@swc/types@0.1.21)(typescript@5.7.3))(@swc/core@1.6.13(@swc/helpers@0.5.15))(@swc/helpers@0.5.15)(@zkochan/js-yaml@0.0.7)(esbuild@0.19.12)(eslint@9.24.0(jiti@2.4.2))(next@15.2.4(@babel/core@7.26.10)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(nx@20.7.1(@swc-node/register@1.10.10(@swc/core@1.6.13(@swc/helpers@0.5.15))(@swc/types@0.1.21)(typescript@5.7.3))(@swc/core@1.6.13(@swc/helpers@0.5.15)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.3)(webpack@5.98.0(@swc/core@1.6.13(@swc/helpers@0.5.15))(esbuild@0.19.12))
@@ -274,6 +274,10 @@ packages:
     resolution: {integrity: sha512-RJlIHRueQgwWitWgF8OdFYGZX328Ax5BCemNGlqHfplnRT9ESi8JkFlvaVYbS+UubVY6dpv87Fs2u5M29iNFVQ==}
     engines: {node: '>=6.9.0'}
 
+  '@babel/code-frame@7.27.1':
+    resolution: {integrity: sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg==}
+    engines: {node: '>=6.9.0'}
+
   '@babel/compat-data@7.26.8':
     resolution: {integrity: sha512-oH5UPLMWR3L2wEFLnFJ1TZXqHufiTKAiLfqw5zkhS4dKXLJ10yVztfil/twG8EDTA4F/tvVNw9nOl4ZMslB8rQ==}
     engines: {node: '>=6.9.0'}
@@ -355,6 +359,10 @@ packages:
 
   '@babel/helper-validator-identifier@7.25.9':
     resolution: {integrity: sha512-Ed61U6XJc3CVRfkERJWDz4dJwKe7iLmmJsbOGu9wSloNSFttHV0I8g6UAgb7qnK5ly5bGLPd4oXZlxCdANBOWQ==}
+    engines: {node: '>=6.9.0'}
+
+  '@babel/helper-validator-identifier@7.27.1':
+    resolution: {integrity: sha512-D2hP9eA+Sqx1kBZgzxZh0y1trbuU+JoDkiEwqhQ36nodYqJwyEIhPSdMNd7lOm/4io72luTPWH20Yda0xOuUow==}
     engines: {node: '>=6.9.0'}
 
   '@babel/helper-validator-option@7.25.9':
@@ -896,6 +904,10 @@ packages:
 
   '@babel/runtime@7.27.0':
     resolution: {integrity: sha512-VtPOkrdPHZsKc/clNqyi9WUA8TINkZ4cGk63UUE3u4pmB2k+ZMQRDuIOagv8UVd6j7k0T3+RRIb7beKTebNbcw==}
+    engines: {node: '>=6.9.0'}
+
+  '@babel/runtime@7.27.1':
+    resolution: {integrity: sha512-1x3D2xEk2fRo3PAhwQwu5UubzgiVWSXTBfWpVd2Mx2AzRqJuDJCsgaDVZ7HB5iGzDW1Hl1sWN2mFyKjmR9uAog==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.27.0':
@@ -2565,6 +2577,12 @@ packages:
 
   '@nx/nx-win32-x64-msvc@20.7.1':
     resolution: {integrity: sha512-cBV9SIvfZVzehYg9w/p77Iw1LqUVy0i848quxo9YBuQCQ0biUsJpkwJJ+b+DW6EbKSN3wX0kh519tGR7SbZrxg==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [win32]
+
+  '@nx/nx-win32-x64-msvc@20.8.2':
+    resolution: {integrity: sha512-iIsY+tVqes/NOqTbJmggL9Juie/iaDYlWgXA9IUv88FE9thqWKhVj4/tCcPjsOwzD+1SVna3YISEEFsx5UV4ew==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
@@ -6440,6 +6458,7 @@ packages:
   node-domexception@1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
+    deprecated: Use your platform's native DOMException instead
 
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
@@ -8649,6 +8668,12 @@ snapshots:
       js-tokens: 4.0.0
       picocolors: 1.1.1
 
+  '@babel/code-frame@7.27.1':
+    dependencies:
+      '@babel/helper-validator-identifier': 7.27.1
+      js-tokens: 4.0.0
+      picocolors: 1.1.1
+
   '@babel/compat-data@7.26.8': {}
 
   '@babel/core@7.26.10':
@@ -8779,6 +8804,8 @@ snapshots:
   '@babel/helper-string-parser@7.25.9': {}
 
   '@babel/helper-validator-identifier@7.25.9': {}
+
+  '@babel/helper-validator-identifier@7.27.1': {}
 
   '@babel/helper-validator-option@7.25.9': {}
 
@@ -9437,6 +9464,8 @@ snapshots:
   '@babel/runtime@7.27.0':
     dependencies:
       regenerator-runtime: 0.14.1
+
+  '@babel/runtime@7.27.1': {}
 
   '@babel/template@7.27.0':
     dependencies:
@@ -11294,7 +11323,10 @@ snapshots:
   '@nx/nx-win32-arm64-msvc@20.7.1':
     optional: true
 
-  '@nx/nx-win32-x64-msvc@20.7.1': {}
+  '@nx/nx-win32-x64-msvc@20.7.1':
+    optional: true
+
+  '@nx/nx-win32-x64-msvc@20.8.2': {}
 
   '@nx/react@20.7.1(@babel/traverse@7.27.0)(@swc-node/register@1.10.10(@swc/core@1.6.13(@swc/helpers@0.5.15))(@swc/types@0.1.21)(typescript@5.7.3))(@swc/core@1.6.13(@swc/helpers@0.5.15))(@swc/helpers@0.5.15)(@zkochan/js-yaml@0.0.7)(esbuild@0.19.12)(eslint@9.24.0(jiti@2.4.2))(next@15.2.4(@babel/core@7.26.10)(babel-plugin-macros@3.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.6))(nx@20.7.1(@swc-node/register@1.10.10(@swc/core@1.6.13(@swc/helpers@0.5.15))(@swc/types@0.1.21)(typescript@5.7.3))(@swc/core@1.6.13(@swc/helpers@0.5.15)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.7.3)(webpack@5.98.0(@swc/core@1.6.13(@swc/helpers@0.5.15))(esbuild@0.19.12))':
     dependencies:
@@ -11938,8 +11970,8 @@ snapshots:
 
   '@testing-library/dom@10.4.0':
     dependencies:
-      '@babel/code-frame': 7.26.2
-      '@babel/runtime': 7.27.0
+      '@babel/code-frame': 7.27.1
+      '@babel/runtime': 7.27.1
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
       chalk: 4.1.2
