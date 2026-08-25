@@ -23,7 +23,7 @@
     "@babel/preset-typescript": "^7.27.0",
     "@cloudflare/vitest-pool-workers": "^0.6.16",
     "@cloudflare/workerd-windows-64": "^1.20250407.0",
-    "@cloudflare/workers-types": "^4.20260702.1",
+    "@cloudflare/workers-types": "^5.0.0",
     "@naxodev/nx-cloudflare": "^4.0.0",
     "@nx-tools/container-metadata": "^6.1.1",
     "@nx-tools/nx-container": "^6.2.0",
